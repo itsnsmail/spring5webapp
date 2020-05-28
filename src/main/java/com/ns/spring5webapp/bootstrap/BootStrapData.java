@@ -46,7 +46,7 @@ public class BootStrapData implements CommandLineRunner {
 		authorRepository.save(td);
 		bookRepository.save(ram);
 
-		Author v = new Author("Valmiki", "");
+		Author v = new Author("Valmiki", "Valmiki");
 		Book r = new Book("Ramayan", "3434434341112");
 		
 		v.getBooks().add(r);

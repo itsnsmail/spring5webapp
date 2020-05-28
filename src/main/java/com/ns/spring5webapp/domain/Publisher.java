@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -20,10 +21,15 @@ public class Publisher {
 	private String name;
 	
 	@OneToMany
+	@JoinColumn(name = "publisher_id")
 	private Set<Book> books = new HashSet<Book>();
 	
 	@OneToOne
 	private Address address;
+	
+	
+	public Publisher() {
+    }
 	
 	public Publisher(String name, Address address) {
 		super();
